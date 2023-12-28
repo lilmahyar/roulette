@@ -1,6 +1,9 @@
 package room
 
-import "github.com/labstack/echo"
+import (
+	"github.com/labstack/echo"
+	"roulette/cmd/repository/room"
+)
 
 func RegisterHandler(e *echo.Echo) {
 	e.GET("/rooms/:id", getRoom)
@@ -9,16 +12,18 @@ func RegisterHandler(e *echo.Echo) {
 	e.DELETE("/rooms/:id", deleteRoom)
 }
 
-func createNewRoom(e echo.Context) error {
+func createNewRoom(ctx echo.Context) error {
 
 }
 
-func editRoomInfo(e echo.Context) error {
+func editRoomInfo(ctx echo.Context) error {
 
 }
 
-func getRoom(e echo.Context) error {
+func getRoom(ctx echo.Context) error {
 
+	params :=
+		room.Repository.GetRoomById(ctx, )
 }
 
 func deleteRoom(e echo.Context) error {
